@@ -21,7 +21,7 @@ public class UsuarioValidation implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "senha2", "field.required");
 
 		Usuario usuario = (Usuario) target;
-		if(usuario.getSenha() == usuario.getSenha2()) {
+		if(usuario.getSenha() != usuario.getSenha2()) {
 			errors.rejectValue("senha2", "field.compare");
 		}
 		
